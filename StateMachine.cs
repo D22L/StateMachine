@@ -5,6 +5,7 @@ public class StateMachine : MonoBehaviour
     ControllerState currentState;
     [SerializeField] PlayerController playerController;
 
+private IdleState idleState;
     public void Start()
     {
         currentState = GetInitialState();
@@ -29,9 +30,18 @@ public class StateMachine : MonoBehaviour
         currentState = newState;
         currentState.Enter();
     }
-    protected virtual ControllerState GetInitialState()
+    //// ???? что это? зачем? почему протектед? зачем виртуал? 
+    ////почитай о модификаторах доступа. какие зачем используются
+    /// почитай о переопределение методов
+    protected virtual ControllerState GetInitialState() 
     {
         return null;
+    }
+    
+    
+    // тебе нужно инициализировать состояния 
+    private void InitStates () {
+     
     }
 }
 
